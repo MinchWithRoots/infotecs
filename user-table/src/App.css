@@ -1,0 +1,212 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Общие настройки */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #f9f9f9;
+}
+
+.app {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #93a9c0;
+}
+
+/* Контейнер таблицы */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Таблица */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.user-table th {
+  background-color: #5d6874;
+  position: relative;
+  user-select: none;
+}
+
+/* Сортируемые заголовки */
+.sortable {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sortable:hover {
+  background-color: #93acc7;
+}
+
+/* Ресайзер колонок */
+.user-table th::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+}
+
+.user-table th.resizing::after {
+  background: #0684ce;
+}
+
+/* Минимальная ширина колонки — 50px */
+.user-table th,
+.user-table td {
+  min-width: 50px;
+}
+
+/* Строки пользователей */
+.user-row {
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.user-row:hover {
+  background-color: #5d6874;
+}
+
+/* Сообщения об ошибках и предупреждениях */
+.error {
+  color: #dc2626;
+  background-color: #fee;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 16px 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.warning {
+  color: #d97706;
+  background-color: #fffbeb;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 16px 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #6398d1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #42a0f8;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Модальное окно — фон */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Модальное окно — содержимое */
+.modal-content {
+  background: #5d6874;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #93a9c0;
+}
+
+.modal-content p {
+  margin: 8px 0;
+}
