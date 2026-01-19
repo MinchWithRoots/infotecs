@@ -210,3 +210,15 @@ h1 {
 .modal-content p {
   margin: 8px 0;
 }
+
+/* Стиль для строки фильтров */
+.filter-table input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.filter-table th {
+  padding: 4px !important;
+  background: #5d6874;
+}
