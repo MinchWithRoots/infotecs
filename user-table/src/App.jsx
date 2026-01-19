@@ -135,6 +135,7 @@ function App() {
   const handleMouseDown = (e, index) => {
     const rect = e.target.getBoundingClientRect();
     // Проверяем, что клик был у правого края (в зоне ресайзера)
+    
     if (rect.right - e.clientX < 8) {
       resizingColIndex.current = index;
       startX.current = e.clientX;
